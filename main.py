@@ -24,10 +24,9 @@ class VoiceAssistant:
 
         # Команды и их обработчики
         self.commands = {
-            "валорант": self.open_valorant(),
             "калькулятор": self.open_calculator,
             "ютуб": self.open_youtube,
-            "osu": self.open_osu,
+            "вал": self.open_osu,
             "пока": self.shutdown
         }
 
@@ -57,21 +56,12 @@ class VoiceAssistant:
     def open_youtube(self):
         webbrowser.open("https://youtube.com")
         self.speak("Открываю YouTube")
-
-
-    def open_valorant(self):
-        val_path = r"D:\Games\Riot Games\Riot Client\RiotClientServices.exe"
-        if os.path.exists(val_path):
-            subprocess.Popen(val_path)
-            self.speak("Запускаю валик")
-        else:
-            self.speak("валик не найдена")
     def open_osu(self):
         # Путь нужно заменить на свой!
-        osu_path = r"C:\Users\ВашеИмя\AppData\Local\osu!\osu!.exe"
+        osu_path = r"CD:\Games\Riot Games\Riot Client\RiotClientServices.exe"
         if os.path.exists(osu_path):
             subprocess.Popen(osu_path)
-            self.speak("Запускаю OSU")
+            self.speak("Запускаю валик")
         else:
             self.speak("OSU не найдена")
 
